@@ -5,3 +5,23 @@ find . -type f -maxdepth 1 | xargs -I@ mv @ ./garbage
 adduser <username>
 echo <username> | passwd <password> --stdin
 
+# Enable write to Documentroot for group users.
+chmod g+w /var/www/html
+
+# Change Documentroot for "apache" group
+chown -R :apache /var/www/html
+
+# Change primary group of user "john"
+usermod -g apache john
+
+# Add secondary group "apache" for user "john"
+usermod -aG apache john
+
+# Read until "EOF" from stdin. print to stdout and file(append).
+cat << EOF | tee -a "out.txt"
+aaa
+bbb
+ccc
+EOF
+
+
