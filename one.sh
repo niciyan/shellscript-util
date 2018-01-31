@@ -17,7 +17,7 @@ usermod -g apache john
 # Add secondary group "apache" for user "john"
 usermod -aG apache john
 
-# Read until "EOF" from stdin. print to stdout and file(append).
+# Read until "EOF" from stdin. Print to stdout and file(append).
 cat << EOF | tee -a "out.txt"
 aaa
 bbb
