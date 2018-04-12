@@ -24,4 +24,6 @@ bbb
 ccc
 EOF
 
+free -h
 
+mpstat -P ALL
