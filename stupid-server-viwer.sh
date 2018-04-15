@@ -2,14 +2,17 @@
 
 set -e
 
-echo "Cpu"
+RED='\033[0;31m'
+NC='\033[0m'
+
+echo "${RED}Cpu${NC}"
 mpstat -P ALL | sed -e "s/^/    /g"
 
-echo "Memory"
+echo "${RED}Memory${NC}"
 free -h | sed -e "s/^/    /g"
 
-echo "Login Session"
+echo "${RED}Login Session${NC}"
 who | sed -e "s/^/    /g"
 
-echo "Apache Configurations"
+echo "${RED}Apache Configurations${NC}"
 apachectl -S | sed -e "s/^/    /g"
