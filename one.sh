@@ -24,6 +24,10 @@ bbb
 ccc
 EOF
 
+# CPU usage
 free -h
 
+# Memory Usage
 mpstat -P ALL
+
+rsync -av --delete --exclude '*.pdf' -e ssh <src> <remote_ssh_user>@<remote_ip>:<dst>
